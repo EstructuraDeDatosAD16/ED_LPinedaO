@@ -17,7 +17,7 @@ public class quickSortClass {
         if (array.length==0 || start>end){
             return null;
         }
-        p= array[(start + end)/2];
+        p= array[(start + end)/2]; //pivote 
         //int p = start + (end-start)/2 + 1;
         i=start;
         j=end;

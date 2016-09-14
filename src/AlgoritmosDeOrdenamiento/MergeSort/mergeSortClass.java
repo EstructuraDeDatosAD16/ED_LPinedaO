@@ -25,17 +25,18 @@ public class mergeSortClass {
             for (i=0; i<nElementosI; i++){              //Desde 0 hasta la cantiddad de elementos para el arreglo Izquierdo, copia elemento por elemento.
                 arrI[i]=arr[i];
             }
-            System.out.println("Derecha: "+Arrays.toString(arrI));
+            System.out.println("Izquierda: "+Arrays.toString(arrI));
             
             for (i=nElementosI;i<arr.length;i++){      //Desde el número de elementos de izq, hasta el tamaño total del arreglo original, copiamos elemento por elemento.
                 arrD[i-nElementosI]=arr[i];
             }
-            System.out.println("Izquierda: "+Arrays.toString(arrD));
+            System.out.println("Derecha: "+Arrays.toString(arrD));
                         
             //Aquí llamamos a la recursividad
             arrI=mergeSort(arrI);
             arrD=mergeSort(arrD);
             
+            System.out.println("termino");
             i=0;j=0;k=0;
             while(arrI.length!=j && arrD.length!=k){    //Mientras cualquier arreglo, izq o der, no sea de un solo elemento.
                 if(arrI[j] < arrD[k]){ //if(arrI[i] < arrD[k]){
@@ -47,17 +48,21 @@ public class mergeSortClass {
                     i++;
                     k++;
                 }
+                System.out.println("ciclo: " + Arrays.toString(arr));
             }
+            System.out.println("previo al a final");
             //Arreglo Final
             while (arrI.length!=j){
                 arr[i]=arrI[j];
                 i++;
                 j++;
+                System.out.println("entro al de izq");
             }
             while (arrD.length!=k){
                 arr[i]=arrD[k];
                 i++;
                 k++; //original j++
+                System.out.println("entro al de derecha");
             } 
         }
         return arr;
