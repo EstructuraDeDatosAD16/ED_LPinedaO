@@ -42,7 +42,7 @@ public class Stack <T> {
         return top==null;
     }
     /**
-     * Inserta un elemento en el top
+     * Inserta un elemento en el top de la stack
      * @param data 
      */
     public void push(T data){

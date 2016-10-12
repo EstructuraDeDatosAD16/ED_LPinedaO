@@ -19,6 +19,7 @@ public class nodeClass <T>{
         this.data=data;
         this.next=null;
     }
+    //Get and Set methods
     public void setData(T data){
         this.data= data;
     }

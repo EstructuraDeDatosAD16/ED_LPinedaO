@@ -47,9 +47,9 @@ public class ComprobacionParentesis {
         stack.showStack();
         System.out.println(stack.getSize());
         if(stack.getSize()>0 || stack.getSize()<0 || flag==false){
-            System.out.println("INVALIDO");
+            System.out.println("¡INVALIDO!");
         } else {
-            System.out.println("VALIDO");
+            System.out.println("¡VALIDO!");
         }
     }
     
