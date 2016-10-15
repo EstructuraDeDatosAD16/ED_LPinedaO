@@ -24,6 +24,7 @@ public class ComprobacionPalindromo {
         
         System.out.print("Write your phrase (Max 20 chars): ");
         String y=entrada.nextLine();
+        System.out.println("STATIC: ");
         for (int i=0; i<y.length(); i++){
             if (y.charAt(i)!=' '){
                 sstack.push(y.charAt(i));
@@ -46,6 +47,33 @@ public class ComprobacionPalindromo {
         
         sstack.showStack();
         System.out.println("Palindromo? ....."+flag);
+        
+        System.out.println("DYNAMIC: ");
+        flag=true;
+        Stack dstack= new Stack();
+        for (int i=0; i<y.length(); i++){
+            if (y.charAt(i)!=' '){
+                dstack.push(y.charAt(i));
+            } 
+        }
+        dstack.showStack();
+        System.out.println("");
+        
+        for (int i=0; i<y.length(); i++){
+            if (y.charAt(i)!=' '){
+                System.out.println(dstack.getTop().getData());
+                if (y.charAt(i)==dstack.getTop().getData().toString().charAt(0)){
+                    dstack.pop();
+                } else {
+                    flag=false;
+                    i=y.length();
+                }
+            } 
+        }
+        
+        dstack.showStack();
+        System.out.println("Palindromo? ....."+flag);
+        
     }
     
 }
